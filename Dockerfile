@@ -1,4 +1,4 @@
-FROM lolhens/baseimage-openjre
-ADD target/springbootApp.jar springbootApp.jar
-EXPOSE 80
-ENTRYPOINT ["java", "-jar", "springbootApp.jar"]
+FROM openjdk:8-jdk-alpine
+MAINTAINER baeldung.com
+COPY target/docker-message-server-1.0.0.jar message-server-1.0.0.jar
+ENTRYPOINT ["java","-jar","/message-server-1.0.0.jar"]
